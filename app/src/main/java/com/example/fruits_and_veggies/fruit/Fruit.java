@@ -1,9 +1,11 @@
 package com.example.fruits_and_veggies.fruit;
 
-public class Fruit {
+import com.example.fruits_and_veggies.item.Item;
+
+public class Fruit implements Item {
     private final String name;
     private final double price;
-    private final int quantity;
+    private int quantity;
     private final double sweetIndex;
 
     public Fruit(String name, double price, int quantity, double sweetIndex) {
@@ -13,19 +15,29 @@ public class Fruit {
         this.sweetIndex = sweetIndex;
     }
 
+
+
+    public double getSweetIndex() {
+        return sweetIndex;
+    }
+
+    @Override
     public String getName() {
         return name;
     }
 
+    @Override
     public double getPrice() {
         return price;
     }
 
+    @Override
     public int getQuantity() {
         return quantity;
     }
 
-    public double getSweetIndex() {
-        return sweetIndex;
+    @Override
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }
