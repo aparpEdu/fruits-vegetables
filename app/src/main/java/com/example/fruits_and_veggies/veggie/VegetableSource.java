@@ -1,23 +1,14 @@
 package com.example.fruits_and_veggies.veggie;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class VegetableSource {
-    private static VegetableSource instance = null;
-    private final List<Vegetable> vegetables;
-
-    public VegetableSource() {
-        this.vegetables = VegetableLoader.loadVegetables();
-    }
-
-    public static VegetableSource getInstance() {
-        if(instance == null) {
-            instance = new VegetableSource();
-        }
-        return instance;
-    }
-
-    public List<Vegetable> getVegetables() {
+    public static List<Vegetable> loadVegetables(){
+        List<Vegetable> vegetables  = new ArrayList<>();
+        vegetables.add(new Vegetable("Cucumber", 20, 4));
+        vegetables.add(new Vegetable("Onion", 22, 3));
+        vegetables.add(new Vegetable("Cucumber", 28, 4));
         return vegetables;
     }
 }
