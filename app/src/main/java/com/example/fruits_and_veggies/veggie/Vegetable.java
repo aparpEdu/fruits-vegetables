@@ -6,11 +6,13 @@ public class Vegetable implements Item {
     private final String name;
     private final double price;
     private int quantity;
+    private final String image;
 
-    public Vegetable(String name, double price, int quantity) {
+    public Vegetable(String name, double price, int quantity, String image) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
+        this.image = image;
     }
 
     @Override
@@ -27,6 +29,12 @@ public class Vegetable implements Item {
     public int getQuantity() {
         return quantity;
     }
+
+    @Override
+    public String getImage() {
+        return image;
+    }
+
     @Override
     public void setQuantity(int quantity) {
         this.quantity = quantity;

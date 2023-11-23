@@ -7,12 +7,14 @@ public class Fruit implements Item {
     private final double price;
     private int quantity;
     private final double sweetIndex;
+    private final String image;
 
-    public Fruit(String name, double price, int quantity, double sweetIndex) {
+    public Fruit(String name, double price, int quantity, double sweetIndex, String image) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
         this.sweetIndex = sweetIndex;
+        this.image = image;
     }
 
 
@@ -35,6 +37,9 @@ public class Fruit implements Item {
     public int getQuantity() {
         return quantity;
     }
+
+    @Override
+    public String getImage() {return image;}
 
     @Override
     public void setQuantity(int quantity) {

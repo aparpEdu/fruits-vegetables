@@ -4,5 +4,6 @@ public interface Item {
     String getName();
     double getPrice();
     int getQuantity();
+    String getImage();
     void setQuantity(int quantity);
 }
