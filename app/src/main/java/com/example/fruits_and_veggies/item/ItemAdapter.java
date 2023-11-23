@@ -62,6 +62,18 @@ public class ItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
     }
 
+    public void updateItem(int position, Item updatedItem) {
+        items.set(position, updatedItem);
+        notifyItemChanged(position);
+    }
+
+    public Item getItem(int position) {
+        if (position >= 0 && position < items.size()) {
+            return items.get(position);
+        }
+        return null;
+    }
+
     @Override
     public int getItemCount() {
         return items.size();

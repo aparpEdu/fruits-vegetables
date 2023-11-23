@@ -4,12 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.fruits_and_veggies.item.Item;
 import com.squareup.picasso.Picasso;
+
+import java.util.Objects;
 
 public class ItemActivity extends AppCompatActivity {
 
@@ -25,6 +28,7 @@ public class ItemActivity extends AppCompatActivity {
         TextView sweetness = findViewById(R.id.itemSweetness);
         Bundle item = getIntent().getBundleExtra("item");
         if (item != null) {
+            Log.d("image", Objects.requireNonNull(item.getString("image")));
             name.setText(item.getString("name", ""));
             price.setText(item.getString("price", ""));
             quantity.setText(item.getString("qnt", ""));
